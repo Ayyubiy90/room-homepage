@@ -8,9 +8,8 @@
 body {
   font-family: "League Spartan", sans-serif;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: hsl(0, 0%, 63%);
-  background-color: hsl(0, 0%, 100%);
 }
 
 /* Typography */
@@ -18,171 +17,232 @@ h1,
 h2 {
   color: hsl(0, 0%, 0%);
   font-weight: 700;
-  margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 a {
-  color: hsl(0, 0%, 27%);
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: hsl(0, 0%, 63%);
+  color: inherit;
 }
 
 /* Layout */
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
-/* Header and Navigation */
+/* Header */
 header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 40px 0;
+  padding: 3rem;
   z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
 }
 
 nav ul {
   display: flex;
-  justify-content: center;
   list-style-type: none;
 }
 
 nav ul li {
-  margin: 0 20px;
+  margin-left: 2rem;
 }
 
 nav ul li a {
   color: hsl(0, 0%, 100%);
   font-weight: 600;
-  text-transform: lowercase;
+  transition: opacity 0.3s ease;
 }
 
-/* Hero Section */
-#hero {
-  height: 100vh;
-  background-image: url("./images/desktop-image-hero-1.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10%;
-  color: hsl(0, 0%, 100%);
+nav ul li a:hover {
+  opacity: 0.7;
 }
 
-/* CTA Button */
-.cta-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: hsl(0, 0%, 0%);
-  color: hsl(0, 0%, 100%);
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: hsl(0, 0%, 27%);
-}
-
-/* Content Sections */
-section {
-  padding: 80px 10%;
-}
-
-#global-presence,
-#quality {
-  background-color: hsl(0, 0%, 100%);
-}
-
-#about-furniture {
-  background-color: hsl(0, 0%, 95%);
-}
-
-/* Footer */
-footer {
-  background-color: hsl(0, 0%, 0%);
-  color: hsl(0, 0%, 100%);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9em;
-}
-
-footer a {
-  color: hsl(0, 0%, 63%);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    font-size: 10px;
-  }
-
-  header {
-    padding: 20px 0;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  #hero {
-    height: auto;
-    padding: 100px 5% 50px;
-  }
-
-  section {
-    padding: 50px 5%;
-  }
-}
-
-/* Slider Styles (if needed) */
+/* Slider */
 .slider {
   position: relative;
+  height: 65vh;
   overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  max-width: 40%;
+}
+
+.cta {
+  display: inline-block;
+  color: hsl(0, 0%, 0%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: opacity 0.3s ease;
+}
+
+.cta:hover {
+  opacity: 0.7;
+}
+
+.arrow {
+  margin-left: 1rem;
 }
 
 .slider-controls {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  right: 0;
   display: flex;
 }
 
-.slider-control {
+.slider-controls button {
   background-color: hsl(0, 0%, 0%);
   color: hsl(0, 0%, 100%);
   border: none;
-  padding: 10px 20px;
+  padding: 1rem 1.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.slider-control:hover {
+.slider-controls button:hover {
   background-color: hsl(0, 0%, 27%);
+}
+
+/* About Furniture Section */
+.about-furniture {
+  display: flex;
+  height: 35vh;
+}
+
+.about-image-1,
+.about-image-2 {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-content {
+  flex: 2;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem;
+  }
+
+  .slider {
+    height: 50vh;
+  }
+
+  .slide-content {
+    max-width: 80%;
+  }
+
+  .about-furniture {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .about-image-1,
+  .about-image-2,
+  .about-content {
+    flex: none;
+    height: 30vh;
+  }
+
+  .about-content {
+    padding: 2rem;
+  }
+}
+
+/* Background images for slides and about section */
+#slide1 {
+  background-image: url("./images/desktop-image-hero-1.jpg");
+}
+#slide2 {
+  background-image: url("./images/desktop-image-hero-2.jpg");
+}
+#slide3 {
+  background-image: url("./images/desktop-image-hero-3.jpg");
+}
+.about-image-1 {
+  background-image: url("./images/image-about-dark.jpg");
+}
+.about-image-2 {
+  background-image: url("./images/image-about-light.jpg");
+}
+
+@media (max-width: 375px) {
+  #slide1 {
+    background-image: url("./images/mobile-image-hero-1.jpg");
+  }
+  #slide2 {
+    background-image: url("./images/mobile-image-hero-2.jpg");
+  }
+  #slide3 {
+    background-image: url("./images/mobile-image-hero-3.jpg");
+  }
 }
