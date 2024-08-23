@@ -1,0 +1,188 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: hsl(0, 0%, 63%);
+  background-color: hsl(0, 0%, 100%);
+}
+
+/* Typography */
+h1,
+h2 {
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  color: hsl(0, 0%, 27%);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: hsl(0, 0%, 63%);
+}
+
+/* Layout */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header and Navigation */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 0;
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  background-image: url("./images/desktop-image-hero-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  color: hsl(0, 0%, 100%);
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: hsl(0, 0%, 27%);
+}
+
+/* Content Sections */
+section {
+  padding: 80px 10%;
+}
+
+#global-presence,
+#quality {
+  background-color: hsl(0, 0%, 100%);
+}
+
+#about-furniture {
+  background-color: hsl(0, 0%, 95%);
+}
+
+/* Footer */
+footer {
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: hsl(0, 0%, 63%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
+
+  header {
+    padding: 20px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  #hero {
+    height: auto;
+    padding: 100px 5% 50px;
+  }
+
+  section {
+    padding: 50px 5%;
+  }
+}
+
+/* Slider Styles (if needed) */
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+}
+
+.slider-control {
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-control:hover {
+  background-color: hsl(0, 0%, 27%);
+}
