@@ -5,11 +5,16 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: "League Spartan", sans-serif;
   font-size: 12px;
   line-height: 1.6;
   color: hsl(0, 0%, 63%);
+  padding-right: calc(100vw - 100%);
 }
 
 /* Mobile menu styles */
@@ -306,5 +311,12 @@ footer {
   }
   #slide3 {
     background-image: url("./images/mobile-image-hero-3.jpg");
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  body {
+    /* Remove the padding for larger screens if needed */
+    padding-right: 0;
   }
 }
